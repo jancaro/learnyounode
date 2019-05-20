@@ -7,7 +7,6 @@ var server = http.createServer(function(req, res){
  res.writeHead(200, { 'Content-Type': 'application/json' });
 var fecha = new Date(url.parse(req.url, true).query.iso) 
 if(url.parse(req.url, true).pathname.toString().startsWith('/api/parsetime')==true && req.method == 'GET'){
-  
   res.write('{\"hour\": '+fecha.getHours()+',\"minute\": '+fecha.getMinutes()+',\"second\": '+fecha.getSeconds()+'}')
   res.end()
  }
