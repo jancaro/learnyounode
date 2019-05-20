@@ -1,8 +1,6 @@
 var http = require('http')
 var map = require('through2-map')
 var url = require('url')
-
-
 var server = http.createServer(function(req, res){
  res.writeHead(200, { 'Content-Type': 'application/json' });
 var fecha = new Date(url.parse(req.url, true).query.iso) 
